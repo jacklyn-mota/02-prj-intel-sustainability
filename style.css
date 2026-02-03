@@ -1,1 +1,135 @@
-/* Add your CSS here */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  background: linear-gradient(
+      rgba(0, 113, 197, 0.9),
+      rgba(0, 113, 197, 0.9)
+    ),
+    url("img/hero-bg.jpg") center / cover no-repeat;
+  color: white;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.intel-logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* =========================
+   TIMELINE LAYOUT
+========================= */
+.timeline {
+  display: flex;
+  gap: 1.5rem;
+  padding: 3rem 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.timeline-card {
+  background: white;
+  border-radius: 12px;
+  min-width: 280px;
+  max-width: 280px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+.timeline-card h2 {
+  color: #0071c5;
+  font-size: 1.8rem;
+}
+
+.timeline-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.timeline-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 0.75rem 0;
+}
+
+/* Hidden details (hover reveal) */
+.timeline-card .details {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   HOVER EFFECTS (EXTRA CREDIT)
+========================= */
+.timeline-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-card:hover .details {
+  opacity: 1;
+  max-height: 200px;
+}
+
+/* =========================
+   MOBILE STACKING
+========================= */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    overflow-x: hidden;
+    scroll-snap-type: none;
+  }
+
+  .timeline-card {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   FOOTER HINT
+========================= */
+.hint {
+  text-align: center;
+  padding-bottom: 2rem;
+  color: #555;
+  font-size: 0.9rem;
+}
